@@ -10,6 +10,7 @@ import axios from 'axios';
 //axios.defaults.headers.commom['Authorization'] = 'AUTH TOKEN'; 
 axios.defaults.headers.post['Content-Type'] = 'application/json'
 
+console.log("testing"); 
 
 // To make global requests 
 axios.interceptors.request.use(request => {
