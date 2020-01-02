@@ -10,6 +10,10 @@ class NewPost extends Component {
         author: 'Max'
     }
 
+componentDidMount () {
+    console.log(this.props);
+}
+
 // to add data to our dummy server
     postDataHandler = () => {
        const data = {

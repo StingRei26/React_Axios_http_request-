@@ -14,6 +14,7 @@ class Posts extends Component {
 
     // to make http request 
     componentDidMount () {
+    console.log(this.props);
     axios.get('/posts')
             .then(response => {
                 // to only pull the first 4 posts 
