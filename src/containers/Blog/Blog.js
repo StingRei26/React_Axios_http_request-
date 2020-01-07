@@ -4,7 +4,7 @@ import axios from '../../axios';
 import './Blog.css';
 import Posts from './Posts/Posts'; 
 import NewPost from './NewPost/NewPost';
-import { Route, NavLink } from 'react-router-dom'; 
+import { Route, NavLink, Switch } from 'react-router-dom'; 
 import FullPost from './FullPost/FullPost';
 
 
@@ -22,21 +22,24 @@ class Blog extends Component {
                             activeClassName="active" activeStyle ={{
                                  color: 'fa923f',
                                  textDecoration: 'underline'
-                            }}>Home</NavLink></li>
+                            }}>Posts</NavLink></li>
                             
                             <li><NavLink to={{
                                 pathname: '/new-post',
                                 hash: '#submit', 
                                 search: '?quick-submit=true'
-                            }} exact>New Post</NavLink></li>
+                            }}>New Post</NavLink></li>
                         </ul>
                     </nav>
                 </header>
                 {/*<Route path="/" render={() => <h1>Home</h1>} />
                 <Route path="/reiniel" exact render={() => <p>Reiniel Ravelo</p>} />*/}
+                {/*Switch allows only one link to render at a time so the paths dont interfere*/}
+                <Switch>
                 <Route path="/" exact component={Posts} />
-                 <Route path="/new-post" component={NewPost} />
+                <Route path="/new-post" component={NewPost} />
                 <Route path="/:id" exact component={FullPost} />
+                </Switch>
             </div>
         );
     }

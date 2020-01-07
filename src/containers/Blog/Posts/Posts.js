@@ -42,6 +42,7 @@ class Posts extends Component {
     
     render() {
         // to take data from the axios call and pass it accordinly withing the Post componeent 
+       if (!this.state.error) {
         const posts = this.state.posts.map(post => {
             return (
             <Link to={'/' + post.id} key={post.id} >
@@ -56,6 +57,7 @@ class Posts extends Component {
                   {posts}
              </section>
         );
+      }
     }
 }
 
